@@ -25,8 +25,11 @@ android {
         }
     }
     buildTypes {
-        getByName("release") {
+        getByName("debug") {
             isMinifyEnabled = false
+        }
+        getByName("release") {
+            isMinifyEnabled = true
         }
     }
     compileOptions {
@@ -44,5 +47,8 @@ dependencies {
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.core.ktx)
     debugImplementation(libs.compose.ui.tooling)
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.appcompat)
 }

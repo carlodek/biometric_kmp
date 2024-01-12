@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ComposeMVVMPoc" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorAccent">@color/black_alpha_70</item>
+        <item name="colorError">@color/error_light</item>
+    </style>
+    <!-- Splash Screen Theme. -->
+    <style name="Theme.AppSplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/purple_200</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
+        <item name="windowSplashScreenAnimationDuration">3000</item>
+        <item name="postSplashScreenTheme">@style/Theme.ComposeMVVMPoc</item>
+       <!-- Status bar and Nav bar configs -->
+        <item name="android:statusBarColor" >@color/purple_200</item>
+        <item name="android:navigationBarColor">@color/purple_200</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
