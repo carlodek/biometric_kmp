@@ -2,7 +2,6 @@
 //  JTouchID.h
 //  JTouchID
 //
-//  Created by Alex Suzuki on 25.08.21.
 //
 
 #import <Foundation/Foundation.h>

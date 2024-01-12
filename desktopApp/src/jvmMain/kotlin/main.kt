@@ -10,6 +10,10 @@ fun main() = application {
     val windowState = rememberWindowState(size = DpSize(400.dp, 400.dp))
     Window(title = "Kmp for desktop", state = windowState, onCloseRequest = ::exitApplication) {
         window.minimumSize = Dimension(400, 400)
-        App()
+        System.setProperty(
+            "jna.library.path",
+            "/Users/carlodechellis/biometric_kmp/desktopApp/nativeC/dist"
+        )//don't know why jvmArgs in desktop gradle not working..
+        App(Any())
     }
 }

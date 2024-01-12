@@ -20,7 +20,7 @@ kotlin {
 compose.desktop {
     application {
         mainClass = "MainKt"
-        jvmArgs("-Djna.library.path=$projectDir/nativeC/dist")
+        jvmArgs.add("-Djna.library.path=$projectDir/nativeC/dist")
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "BiometricKmpDesktopApp"

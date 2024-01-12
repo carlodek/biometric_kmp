@@ -17,7 +17,7 @@ kotlin {
             kotlinOptions.jvmTarget = "17"
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -41,12 +41,25 @@ kotlin {
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
+        val desktopMain by getting {
+            dependencies {
+                implementation(compose.desktop.common)
+                implementation(compose.preview)
+                implementation(compose.uiTooling)
+                implementation(libs.jna)
+            }
+        }
+        androidMain.dependencies {
+            implementation(libs.androidx.biometric)
+        }
     }
 }
 
 android {
     namespace = "it.carlo.de.chellis.biometrickmp"
     compileSdk = 34
+    sourceSets["main"].res.srcDirs("src/androidMain/res")
+    sourceSets["main"].resources.srcDirs("src/commonMain/resources")
     defaultConfig {
         minSdk = 24
     }
