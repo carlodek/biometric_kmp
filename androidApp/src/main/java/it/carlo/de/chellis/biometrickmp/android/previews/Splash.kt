@@ -10,7 +10,7 @@ import it.carlo.de.chellis.biometrickmp.flow.SplashScreen
 @Composable
 fun SplashScreenPreview() {
     BasePreview(Flow.Splash) {
-        SplashScreen(it)
+        SplashScreen(it.first)
     }
 }
 
@@ -18,6 +18,6 @@ fun SplashScreenPreview() {
 @Composable
 fun SplashScreenPreviewNight() {
     BasePreview(Flow.Splash) {
-        SplashScreen(it)
+        SplashScreen(it.first)
     }
 }

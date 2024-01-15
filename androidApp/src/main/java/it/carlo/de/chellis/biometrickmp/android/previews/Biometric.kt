@@ -10,7 +10,7 @@ import it.carlo.de.chellis.biometrickmp.flow.Flow
 @Composable
 fun BiometricScreenPreview() {
     BasePreview(Flow.AuthenticateScreen) {
-        AuthenticateScreen(it)
+        AuthenticateScreen(it.first, it.second)
     }
 }
 
@@ -18,6 +18,6 @@ fun BiometricScreenPreview() {
 @Composable
 fun BiometricScreenPreviewNight() {
     BasePreview(Flow.AuthenticateScreen) {
-        AuthenticateScreen(it)
+        AuthenticateScreen(it.first, it.second)
     }
 }

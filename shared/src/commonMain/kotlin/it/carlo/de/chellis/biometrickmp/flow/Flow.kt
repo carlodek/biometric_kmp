@@ -1,6 +1,7 @@
 package it.carlo.de.chellis.biometrickmp.flow
 
 import androidx.compose.runtime.MutableState
+import it.carlo.de.chellis.biometrickmp.dialog.Dialog
 
 sealed class Flow {
     data object Splash : Flow()
@@ -8,14 +9,25 @@ sealed class Flow {
     data object ResultScreen : Flow()
 }
 
-fun MutableState<Flow>.popBackStack() {
+fun MutableState<Flow>.popBack(dialog: MutableState<Dialog?>? = null) {
     when (this.value) {
-        is Flow.Splash -> {}
-        is Flow.AuthenticateScreen -> {
-        }
-
-        is Flow.ResultScreen -> {
-            this.value = Flow.AuthenticateScreen
-        }
+        Flow.Splash -> {}
+        Flow.AuthenticateScreen -> dialog?.value = exitDialog(dialog)
+        Flow.ResultScreen -> this.value = Flow.AuthenticateScreen
     }
 }
+
+fun exitDialog(dialog: MutableState<Dialog?>? = null) = Dialog(
+    "Warning",
+    "Would you like to exit from app?",
+    Dialog.DialogButton(
+        "Yes"
+    ) {
+
+    },
+    Dialog.DialogButton(
+        "No"
+    ) {
+        dialog?.value = null
+    }
+)

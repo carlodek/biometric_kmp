@@ -13,8 +13,9 @@ import androidx.compose.runtime.MutableState
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import it.carlo.de.chellis.biometrickmp.App
+import it.carlo.de.chellis.biometrickmp.dialog.Dialog
 import it.carlo.de.chellis.biometrickmp.flow.Flow
-import it.carlo.de.chellis.biometrickmp.flow.popBackStack
+import it.carlo.de.chellis.biometrickmp.flow.popBack
 import kotlinx.coroutines.delay
 
 class MainActivity : AppCompatActivity() {
@@ -26,8 +27,11 @@ class MainActivity : AppCompatActivity() {
             animateSplash(it)
         }
         var flow: MutableState<Flow>? = null
+        var dialog: MutableState<Dialog?>? = null
         setContent {
-            flow = App(this)
+            val (mFlow, mDialog) = App(this)
+            flow = mFlow
+            dialog = mDialog
             LaunchedEffect(Unit) {
                 delay(1000L)
                 viewModel.keepSplashOnScreen = false
@@ -36,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         this.onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                flow?.popBackStack()
+                flow?.popBack(dialog)
             }
         })
     }
