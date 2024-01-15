@@ -11,7 +11,8 @@ import it.carlo.de.chellis.biometrickmp.flow.Flow
 private fun AppDialogPrev() {
     AppDialog(
         Dialog(
-            "title", "this is the description",
+            "title",
+            "this is the description",
             Dialog.DialogButton(
                 "btn text",
                 action = {
@@ -47,7 +48,8 @@ private fun AppDialogPrev1Btn() {
                 "btn text",
                 action = {
                 })
-        ))
+        )
+    )
 }
 
 @Preview

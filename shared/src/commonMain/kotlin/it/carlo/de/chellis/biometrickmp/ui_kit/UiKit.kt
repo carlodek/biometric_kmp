@@ -34,7 +34,8 @@ import org.jetbrains.compose.resources.painterResource
 
 @Composable
 private fun Header.HeaderImage?.makeOneComposable() {
-    val boxModifier = if (this != null) Modifier
+    val boxModifier = if (this != null)
+        Modifier
         .fillMaxHeight()
         .width(60.dp)
         .semantics { disabled() }

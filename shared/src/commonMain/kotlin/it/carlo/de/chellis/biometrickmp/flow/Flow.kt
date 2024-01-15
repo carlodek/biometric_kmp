@@ -2,6 +2,7 @@ package it.carlo.de.chellis.biometrickmp.flow
 
 import androidx.compose.runtime.MutableState
 import it.carlo.de.chellis.biometrickmp.dialog.Dialog
+import it.carlo.de.chellis.biometrickmp.utils.closeApp
 
 sealed class Flow {
     data object Splash : Flow()
@@ -23,7 +24,7 @@ fun exitDialog(dialog: MutableState<Dialog?>? = null) = Dialog(
     Dialog.DialogButton(
         "Yes"
     ) {
-
+        closeApp()
     },
     Dialog.DialogButton(
         "No"
