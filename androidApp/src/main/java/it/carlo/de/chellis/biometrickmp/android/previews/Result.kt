@@ -10,7 +10,7 @@ import it.carlo.de.chellis.biometrickmp.flow.ResultScreen
 @Composable
 fun ResultPreview() {
     BasePreview(Flow.ResultScreen) {
-        ResultScreen(flow = it)
+        ResultScreen(flow = it.first)
     }
 }
 
@@ -18,6 +18,6 @@ fun ResultPreview() {
 @Composable
 fun ResultPreviewNight() {
     BasePreview(Flow.ResultScreen) {
-        ResultScreen(flow = it)
+        ResultScreen(flow = it.first)
     }
 }

@@ -15,10 +15,8 @@ import androidx.compose.ui.semantics.disabled
 import androidx.compose.ui.semantics.semantics
 import it.carlo.de.chellis.biometrickmp.resources.DrawableRes
 
-
 //Light Colors
 val lightColorPalette = lightColors()
-
 //Dark colors
 val darkColorPalette = darkColors()
 val ResourcesRefs = compositionLocalOf<DrawableRes> { DrawableRes.LightMode }
