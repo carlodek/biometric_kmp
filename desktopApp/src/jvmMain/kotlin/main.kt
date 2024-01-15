@@ -8,7 +8,7 @@ import java.awt.Dimension
 
 fun main() = application {
     val windowState = rememberWindowState(size = DpSize(400.dp, 400.dp))
-    Window(title = "Kmp for desktop", state = windowState, onCloseRequest = ::exitApplication) {
+    Window(title = "Biometric Kmp", state = windowState, onCloseRequest = ::exitApplication) {
         window.minimumSize = Dimension(400, 400)
         System.setProperty(
             "jna.library.path",
